@@ -5,9 +5,9 @@
   "main": "InstagramPosts.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luchoster/react-ig/tree/master/dist"
+    "url": "git@github.com:luchoster/react-ig.git"
   },
-  "homepage": "https://github.com/luchoster/react-ig/tree/master/dist",
+  "homepage": "https://github.com/luchoster/react-ig/",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
