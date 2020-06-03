@@ -1,0 +1,20 @@
+{
+  "name": "@luchoster/react-ig",
+  "version": "0.0.4",
+  "description": "React component to get Instagram posts without using the api",
+  "main": "InstagramPosts.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luchoster/react-ig/tree/master/dist"
+  },
+  "homepage": "https://github.com/luchoster/react-ig/tree/master/dist",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "@luchoster",
+  "license": "ISC"
+}
