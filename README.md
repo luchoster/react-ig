@@ -1,6 +1,6 @@
 React-Ig
 ===
-![npm](https://img.shields.io/npm/v/react-ig?style=for-the-badge)
+![github](https://img.shields.io/github/package-json/v/luchoster/react-ig?style=for-the-badge)
 
 
 This React Component will allow you to scrape Instagram posts and dislay a grid of images with an overlay (on hover) of number of likes and comments, each image links (opens in a new tab) to it's IG post url.
