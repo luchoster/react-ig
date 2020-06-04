@@ -5,6 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.scrapingInstagramPosts = scrapingInstagramPosts;
 exports.scrapingInstagramHashtags = scrapingInstagramHashtags;
 
 var R = _interopRequireWildcard(require("ramda"));
@@ -41,19 +42,55 @@ var parseResponse = function parseResponse(response) {
   return JSON.parse(jsonData).entry_data;
 };
 
-function scrapingInstagramHashtags(_x) {
-  return _scrapingInstagramHashtags.apply(this, arguments);
+function scrapingInstagramPosts(_x) {
+  return _scrapingInstagramPosts.apply(this, arguments);
 }
 
-function _scrapingInstagramHashtags() {
-  _scrapingInstagramHashtags = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
-    var altHash, hashtag, maxPosts;
+function _scrapingInstagramPosts() {
+  _scrapingInstagramPosts = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
+    var username;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            altHash = _ref.altHash, hashtag = _ref.hashtag, maxPosts = _ref.maxPosts;
-            return _context.abrupt("return", _axios.default.get("https://www.instagram.com/explore/tags/".concat(hashtag, "/")).then(function (response) {
+            username = _ref.username;
+            return _context.abrupt("return", _axios.default.get("https://www.instagram.com/".concat(username, "/")).then(function (response) {
+              var data = parseResponse(response);
+              var photos = [];
+              data && (0, _Helpers.mapIndexed)(function (item, index) {
+                (0, _Helpers.mapIndexed)(function (post, i) {
+                  return photos.push(post.node);
+                })(item[0].graphql.user.edge_owner_to_timeline_media.edges);
+              })(R.values(data));
+              return photos;
+            }).catch(function (err) {
+              console.warn("\nCould not fetch instagram posts. Error status ".concat(err));
+              return null;
+            }));
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _scrapingInstagramPosts.apply(this, arguments);
+}
+
+function scrapingInstagramHashtags(_x2) {
+  return _scrapingInstagramHashtags.apply(this, arguments);
+}
+
+function _scrapingInstagramHashtags() {
+  _scrapingInstagramHashtags = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(_ref2) {
+    var altHash, hashtag, maxPosts;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            altHash = _ref2.altHash, hashtag = _ref2.hashtag, maxPosts = _ref2.maxPosts;
+            return _context2.abrupt("return", _axios.default.get("https://www.instagram.com/explore/tags/".concat(hashtag, "/")).then(function (response) {
               var data = parseResponse(response);
               var photos = [];
               data.TagPage[0].graphql.hashtag.edge_hashtag_to_media.edges.forEach(function (edge) {
@@ -69,10 +106,10 @@ function _scrapingInstagramHashtags() {
 
           case 2:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
       }
-    }, _callee);
+    }, _callee2);
   }));
   return _scrapingInstagramHashtags.apply(this, arguments);
 }

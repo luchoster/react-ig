@@ -85,7 +85,8 @@ var Posts = function Posts(props) {
 var InstagramPosts = function InstagramPosts(_ref) {
   var altHash = _ref.altHash,
       hashtag = _ref.hashtag,
-      maxPosts = _ref.maxPosts;
+      maxPosts = _ref.maxPosts,
+      username = _ref.username;
 
   var _React$useState = _react.default.useState([]),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -93,7 +94,11 @@ var InstagramPosts = function InstagramPosts(_ref) {
       setIgPosts = _React$useState2[1];
 
   _react.default.useEffect(function () {
-    (0, _Instagram.scrapingInstagramHashtags)({
+    username ? (0, _Instagram.scrapingInstagramPosts)({
+      username: username
+    }).then(function (res) {
+      return setIgPosts(res);
+    }) : (0, _Instagram.scrapingInstagramHashtags)({
       hashtag: hashtag,
       altHash: altHash ? altHash : null,
       maxPosts: maxPosts ? maxPosts : 12
