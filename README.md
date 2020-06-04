@@ -26,7 +26,11 @@ How to use
 ---
 `import InstagramPosts from '@luchoster/react-ig'`
 
-For now, only Hashtag scraping is available
+`<InstagramPosts username="vegas" />`
+
+when using the `username` prop, it will only return the most recent 12 posts from that account
+
+or you can get scrape a `hashtag` and define a number of `maxPosts` (recommended) to display
 
 `<InstagramPosts hashtag="vegas" />`
 
@@ -35,10 +39,12 @@ Available Props
 ---
 
 ```
-    hashtag
-    altHash
-    maxPosts
+  username
+  hashtag
+  altHash
+  maxPosts
 ```
+
 ![](https://i.imgur.com/UJbkyd0.png)
 
 

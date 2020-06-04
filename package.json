@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git@github.com:luchoster/react-ig.git"
   },
-  "homepage": "https://github.com/luchoster/react-ig/",
+  "homepage": "https://react-ig.netlify.app/",
   "publishConfig": {
     "registry-gb": "https://npm.pkg.github.com/",
     "registry": "https://registry.npmjs.org/"
