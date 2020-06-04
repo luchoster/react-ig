@@ -18,8 +18,10 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
+    "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
     "ramda": "^0.27.0",
+    "regenerator-runtime": "^0.13.5",
     "typography": "^0.16.19"
   },
   "devDependencies": {
