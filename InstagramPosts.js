@@ -11,7 +11,7 @@ var _Instagram = require("./utils/Instagram");
 
 var _Helpers = require("./utils/Helpers");
 
-require("./styles/main.scss");
+require("./styles/main.css");
 
 var _typography = _interopRequireDefault(require("typography"));
 
