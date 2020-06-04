@@ -16,15 +16,15 @@ Install
 
 **npm**
 
-`npm install react-ig --save`
+`npm install @luchoster/react-ig --save`
 
 **yarn**
 
-`yarn add react-ig`
+`yarn add @luchoster/react-ig`
 
 How to use
 ---
-`import InstagramPosts from 'react-ig'`
+`import InstagramPosts from '@luchoster/react-ig'`
 
 For now, only Hashtag scraping is available
 
