@@ -1,6 +1,6 @@
 {
   "name": "@luchoster/react-ig",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "React component to get Instagram posts without using the api",
   "main": "InstagramPosts.js",
   "repository": {
