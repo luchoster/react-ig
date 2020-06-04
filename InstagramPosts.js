@@ -11,7 +11,7 @@ var _Instagram = require("./utils/Instagram");
 
 var _Helpers = require("./utils/Helpers");
 
-require("core-js/stable");
+require("core-js");
 
 require("regenerator-runtime/runtime");
 
