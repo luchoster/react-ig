@@ -99,7 +99,8 @@ var InstagramPosts = function InstagramPosts(_ref) {
 
   _react.default.useEffect(function () {
     username ? (0, _Instagram.scrapingInstagramPosts)({
-      username: username
+      username: username,
+      maxPosts: maxPosts ? maxPosts : 12
     }).then(function (res) {
       return setIgPosts(res);
     }) : (0, _Instagram.scrapingInstagramHashtags)({
