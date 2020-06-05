@@ -2,10 +2,7 @@
   "name": "@luchoster/react-ig",
   "author": "@luchoster",
   "description": "React component to get Instagram posts without using the api",
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "homepage": "https://react-ig.netlify.app/",
   "main": "dist/InstagramPosts.js",
   "module": "dist/InstagramPosts.js",
@@ -43,17 +40,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "yarn build-css && rm -rf dist && mkdir dist &&  babel src/component -d dist --copy-files"
+    "publish:npm": "yarn build-css && babel src/component -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -66,10 +59,6 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1"
   },
-  "keywords": [
-    "react",
-    "react component",
-    "instagram"
-  ],
+  "keywords": ["react", "react component", "instagram"],
   "license": "ISC"
 }
