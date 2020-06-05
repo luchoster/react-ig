@@ -48,12 +48,12 @@ function scrapingInstagramPosts(_x) {
 
 function _scrapingInstagramPosts() {
   _scrapingInstagramPosts = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
-    var username;
+    var username, maxPosts;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            username = _ref.username;
+            username = _ref.username, maxPosts = _ref.maxPosts;
             return _context.abrupt("return", _axios.default.get("https://www.instagram.com/".concat(username, "/")).then(function (response) {
               var data = parseResponse(response);
               var photos = [];
@@ -62,7 +62,7 @@ function _scrapingInstagramPosts() {
                   return photos.push(post.node);
                 })(item[0].graphql.user.edge_owner_to_timeline_media.edges);
               })(R.values(data));
-              return photos;
+              return maxPosts ? photos.slice(0, maxPosts) : photos;
             }).catch(function (err) {
               console.warn("\nCould not fetch instagram posts. Error status ".concat(err));
               return null;
