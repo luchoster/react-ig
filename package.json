@@ -1,28 +1,56 @@
 {
   "name": "@luchoster/react-ig",
-  "version": "0.0.18",
+  "author": "@luchoster",
   "description": "React component to get Instagram posts without using the api",
-  "main": "InstagramPosts.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:luchoster/react-ig.git"
-  },
+  "files": ["dist", "README.md"],
   "homepage": "https://react-ig.netlify.app/",
+  "main": "dist/InstagramPosts.js",
+  "module": "dist/InstagramPosts.js",
+  "private": false,
+  "version": "0.0.18",
   "publishConfig": {
     "registry-gb": "https://npm.pkg.github.com/",
     "registry": "https://registry.npmjs.org/"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:luchoster/react-ig.git"
   },
   "dependencies": {
+    "@babel/plugin-transform-regenerator": "^7.10.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
     "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
+    "node-sass-chokidar": "^1.4.0",
     "ramda": "^0.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
     "regenerator-runtime": "^0.13.5",
     "typography": "^0.16.19"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/component-ig/styles -o src/component-ig/styles",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "publish:npm": "yarn build-css && babel src/component-ig -d dist --copy-files"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -30,7 +58,6 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1"
   },
-  "keywords": [],
-  "author": "@luchoster",
+  "keywords": ["react", "react component", "instagram"],
   "license": "ISC"
 }
