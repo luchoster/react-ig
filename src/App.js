@@ -1,10 +1,12 @@
 import React from 'react'
 
-// import InstagramPosts from '@luchoster/react-ig'
-import InstagramPosts from './component/InstagramPosts'
+import InstagramPosts from './component-ig/InstagramPosts'
+
+import './styles/main.scss'
 
 export default () => (
-  <>
-    <InstagramPosts username="nevadasilvertrails" />
-  </>
+  <div className="container">
+    <header className="header">Username: vegas</header>
+    <InstagramPosts username="vegas" />
+  </div>
 )
