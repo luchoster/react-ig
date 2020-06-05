@@ -7,7 +7,7 @@
   "main": "dist/InstagramPosts.js",
   "module": "dist/InstagramPosts.js",
   "private": false,
-  "version": "0.0.19-rc.0",
+  "version": "0.0.18",
   "publishConfig": {
     "registry-gb": "https://npm.pkg.github.com/",
     "registry": "https://registry.npmjs.org/"
