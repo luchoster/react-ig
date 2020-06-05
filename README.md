@@ -34,19 +34,6 @@ Install
 
 `yarn add @luchoster/react-ig`
 
-How to use
----
-`import InstagramPosts from '@luchoster/react-ig'`
-
-`<InstagramPosts username="vegas" />`
-
-when using the `username` prop, it will only return the most recent 12 posts from that account
-
-or you can get scrape a `hashtag` and define a number of `maxPosts` (recommended) to display
-
-`<InstagramPosts hashtag="vegas" />`
-
-
 Available Props
 ---
 
@@ -56,6 +43,20 @@ Available Props
   altHash
   maxPosts
 ```
+
+How to use
+---
+
+`import InstagramPosts from '@luchoster/react-ig'`
+
+`<InstagramPosts username="vegas" />`
+
+when using the `username` prop, it will only return the most recent 12 posts from that account, but you can use `maxPosts` if you want to display than 12 posts
+
+or you can get scrape a `hashtag` and define a number of `maxPosts` (recommended) to display
+
+`<InstagramPosts hashtag="vegas" maxPosts="24" />`
+
 
 ![](https://i.imgur.com/UJbkyd0.png)
 
